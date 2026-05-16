@@ -20,7 +20,7 @@ body {
 
 .topic-container {
     border: 1px solid #fff;
-    display: flex;
+    display: block;
     flex-direction: column;
     margin: 1rem;
     padding: 1rem;
@@ -28,7 +28,7 @@ body {
     border-radius: 0.5rem;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: fit-content;
+    height: 40vh;
 }
 .choice-container {
     position: relative;
