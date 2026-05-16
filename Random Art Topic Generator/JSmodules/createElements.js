@@ -245,6 +245,7 @@ function createSelections(config) {
 
 function generationButton() {
     const generateButton = document.createElement("button");
+    generateButton.title = "Generate random topic from subject and style fields.";
     generateButton.id = "generate";
     generateButton.className = "generate-button";
     generateButton.textContent = "Generate";
