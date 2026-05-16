@@ -270,16 +270,20 @@ function displayResult(selection) {
     console.log("Final selection:", topicText);
     // You can create a DOM element to display this
 
+    const topicResultSection = document.createElement("section");
+    topicResultSection.className = "topic-result-section";
+    
     const topicElement = document.createElement("p");
     topicElement.innerHTML = topicText;
-    topicElement.classList.add("topic-result");
+    topicElement.classList.add("topic-result-text");
     
     // Append to a container or body
-    if (document.querySelector(".topic-result")) {
-        document.querySelector(".topic-result").remove();
+    if (document.querySelector(".topic-result-section")) {
+        document.querySelector(".topic-result-section").remove();
     }
     const topicContainer = document.querySelector(".topic-container");
-    topicContainer.appendChild(topicElement);
+    topicContainer.appendChild(topicResultSection);
+    topicResultSection.appendChild(topicElement);
 }
 
 function getCurrentSelectionValues() {
@@ -326,9 +330,9 @@ function formatTopicText(selection) {
     const mediumArticle  = getArticle(medium);
 
     if (styleCategory === "artist") {
-    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of ${subjectArticle}<span class="subjectText">${cleanSubject}</span> in the style of <span class="styleText">${cleanStyle}</span>.`;
+    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of <br>${subjectArticle}<span class="subjectText">${cleanSubject}</span> <br>in the style of <br><span class="styleText">${cleanStyle}</span>.`;
     } else {
-    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of ${subjectArticle}<span class="subjectText">${cleanSubject}</span> in a <span class="styleText">${cleanStyle}</span> style.`;
+    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of <br>${subjectArticle}<span class="subjectText">${cleanSubject}</span> in a <br><span class="styleText">${cleanStyle}</span> style.`;
     }
 }
 
