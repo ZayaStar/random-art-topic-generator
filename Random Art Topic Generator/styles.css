@@ -30,38 +30,45 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     height: 40vh;
 }
+
 .choice-container {
     position: relative;
-    display: inline-block;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: auto;
 }
+
 .choice-section {
     display: inline-flex;
     margin: 1rem;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
+    color: #fff;
 }
 
 .choice-section label {
     display: inline-block;
     margin-left: 0.5rem;
-    border: 1px solid #fff;
+    border: 1px solid #e9c5ade0;
     padding: 0.25rem;
-    /* margin-bottom: 5px; */
     text-align: right;
+    color: #000;
+    background-color: #e9c5ade0;
+    border-radius: 0.25rem;
 }
 
 .choice-section select {
-    display: inline-block;
+    display: inline-flex;
     padding: 0.5rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #e9c5ade0;
+    color: #000;
+    border-radius: 0.25rem;
 }
 
 .choice-section input[type="checkbox"] {

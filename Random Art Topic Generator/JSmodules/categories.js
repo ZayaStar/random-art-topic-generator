@@ -10,6 +10,7 @@
  * SYMBOLS:
  * @ - No article needed.
  * # - Article "The" is needed.
+ * if there is no symbol at all the default article is "A" or "An" depending on the word.
  */
 export const categories = {
     medium: ["Sketch", "Doodle", "Illustration", "Painting"],
