@@ -3,7 +3,7 @@ import { categories } from "./categories.js";
 export function createElements() {
     const topicContainer = document.createElement("section");
 
-    topicContainer.id = "topic container";
+    topicContainer.id = "topic-container";
     topicContainer.classList.add("topic-container");
     document.body.appendChild(topicContainer);
 
