@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #666666;
+    color: #fff;
+}
+
+#title {
+    text-align: center;
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.topic-container {
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: fit-content;
+}
+.choice-container {
+    position: relative;
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.choice-section {
+    display: inline-flex;
+    margin: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.choice-section label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    border: 1px solid #fff;
+    padding: 0.25rem;
+    /* margin-bottom: 5px; */
+    text-align: right;
+}
+
+.choice-section select {
+    display: inline-block;
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.choice-section input[type="checkbox"] {
+    display: inline-block;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.generate-button {
+    display: block;
+    padding: 0.5rem;
+    width: 10rem;
+    height: 3rem;
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topic-result {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.mediumText {
+    font-size: 1.5rem;
+    color: #4af507;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.styleText {
+    font-size: 1.5rem;
+    color: #00eeff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.subjectText {
+    font-size: 1.5rem;
+    color: #ff0505;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+.topic-result {
+    max-width: 75%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
