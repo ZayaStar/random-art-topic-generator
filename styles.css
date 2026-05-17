@@ -181,6 +181,10 @@ p {
         max-width: 90vw;
     }
     
+    .topic-result-text {
+        font-size: 1.2rem;
+    }
+    
     .choice-section {
         flex-direction: column;
         align-items: flex-start;
@@ -188,17 +192,23 @@ p {
     }
     
     .choice-section label {
-        margin-left: 0;
-        margin-bottom: 0.4rem;
+        align-self: flex-start;
+        font-size: 0.8rem;
+        margin-left: 0em;
+        margin-bottom: 0.1rem;
         text-align: left;
     }
     
     .choice-section select {
-        width: 80%;
+        align-self: flex-start;
+        font-size: 0.8rem;
+        /* margin-left: 0.8em; */
+        width: 100%;
     }
     
     .generate-button {
-        max-width: 40%;
-        min-width: 20%;
+        text-align: center;
+        font-size: 0.8rem;
+        max-width: 50%;
     }
 }

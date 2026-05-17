@@ -27,12 +27,11 @@ export function createElements() {
     selectionConfigs.forEach(config => {
         const choiceSection = document.createElement("section");
         choiceSection.className = "choice-section";
-        // const [select, checkbox, label] = createSelections(config);
-        const [select,  label] = createSelections(config);
+
+        const [select, label] = createSelections(config);
         
         choiceContainer.appendChild(choiceSection);
         choiceSection.appendChild(select);
-        // choiceSection.appendChild(checkbox);
         choiceSection.appendChild(label);
     });
 
@@ -58,137 +57,6 @@ export function createElements() {
         console.log("Subject changed to", subjectElement.value);
     });
 
-}
-
-function createDrawType() {
-    const mediumType = document.createElement("select");
-    mediumType.id = "medium-type";
-    mediumType.className = "medium-type";
-    mediumType.dataset.action = "medium";
-
-    // Add options
-    const options = categories.medium;
-    options.forEach(option => {
-        const optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.textContent = option;
-        optionElement.dataset.action = option;
-        mediumType.appendChild(optionElement);
-    });
-
-    const mediumCheckbox = document.createElement("input");
-    mediumCheckbox.type = "checkbox";
-    mediumCheckbox.id = "medium-checkbox";
-    mediumCheckbox.className = "medium-checkbox";
-    mediumCheckbox.dataset.action = "medium-checkbox";
-   
-    const drawTypeLabel = document.createElement("label");
-    drawTypeLabel.htmlFor = "medium-checkbox";
-    drawTypeLabel.textContent = "Medium";
-    drawTypeLabel.dataset.action = "medium-label";
-    
-    return [mediumType, mediumCheckbox, drawTypeLabel];
-}
-
-function createMediaGenre() {
-    const mediaGenre = document.createElement("select");
-    mediaGenre.id = "media-genre";
-    mediaGenre.className = "media-genre";
-    mediaGenre.dataset.action = "media_genre";
-
-    // Add options
-    const options = categories.media_genre;
-    options.forEach(option => {
-        const optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.textContent = option;
-        optionElement.dataset.action = option;
-        mediaGenre.appendChild(optionElement);
-    });
-   
-    mediaGenre.value = categories.media_genre[0];
-    console.log(mediaGenre.value);
-    mediaGenre.addEventListener('change', () => {
-        console.log(mediaGenre.value);
-    });
-
-    const mediaGenreCheckbox = document.createElement("input");
-    mediaGenreCheckbox.type = "checkbox";
-    mediaGenreCheckbox.id = "media-checkbox";
-    mediaGenreCheckbox.className = "media-checkbox";
-    mediaGenreCheckbox.dataset.action = "media-checkbox"
-    
-    const mediaGenreLabel = document.createElement("label");
-    mediaGenreLabel.htmlFor = "media-checkbox";
-    mediaGenreLabel.textContent = "for: Media";
-    return [mediaGenre, mediaGenreCheckbox, mediaGenreLabel];
-}
-
-function createStyle() {
-    const artstyle = document.createElement("select");
-    artstyle.id = "artstyle";
-    artstyle.className = "artstyle";
-    artstyle.dataset.action = "artstyle";
-    
-    const artStyleData = categories.style;
-    
-    // Add options
-    const options = Object.keys(artStyleData);
-    options.forEach(option => {
-        const optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.textContent = option.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-        optionElement.dataset.action = option;
-        artstyle.appendChild(optionElement);
-    });
-    
-    const artStyleCheckbox = document.createElement("input");
-    artStyleCheckbox.type = "checkbox";
-    artStyleCheckbox.id = "style-checkbox";
-    artStyleCheckbox.className = "style-checkbox";
-    artStyleCheckbox.dataset.action = "style-checkbox";
-    
-    const styleLabel = document.createElement("label");
-    styleLabel.htmlFor = "style-checkbox";
-    styleLabel.textContent = "Style";
-    styleLabel.dataset.action = "style-label";
-    
-    return [artstyle, artStyleCheckbox, styleLabel];
-}
-
-function createSubject(genre) {
-    const subject = document.createElement("select");
-    subject.id = "subject";
-    subject.className = "subject";
-    subject.dataset.action = "subject";
-    
-    const genreData = categories.subject[genre.toLowerCase().replace(/[\s_]+/g, '_')];
-    console.log(genreData);
-    
-    // Add options
-    const options = Object.keys(genreData);
-    options.forEach(option => {
-        const optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.textContent = option.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
-        ;
-        optionElement.dataset.action = option;
-        subject.appendChild(optionElement);
-    });
-   
-    const subjectCheckbox = document.createElement("input");
-    subjectCheckbox.type = "checkbox";
-    subjectCheckbox.id = "subject-checkbox";
-    subjectCheckbox.className = "subject-checkbox";
-    subjectCheckbox.dataset.action = "subject-checkbox";
-    
-    const subjectLabel = document.createElement("label");
-    subjectLabel.htmlFor = "subject-checkbox";
-    subjectLabel.textContent = "Subject";
-    subjectLabel.dataset.action = "subject-label";
-    
-    return [subject, subjectCheckbox, subjectLabel];
-       
 }
 
 const selectionConfigs = [
@@ -234,19 +102,8 @@ function createSelections(config) {
     label.htmlFor = config.key;
     label.textContent = config.label;
     label.dataset.action = config.datasetAction + "-label";
-    
-    // const checkbox = document.createElement("input");
-    
-    // if (config.checkbox === true) {
-    //     checkbox.type = "checkbox";
-    //     checkbox.id = config.key + "-checkbox";
-    //     checkbox.className = config.key + "-checkbox";
-    //     checkbox.dataset.action = config.key + "-checkbox";
-        
-    // }
 
     return [element, label];
-    // return [element, checkbox, label];
 }
 
 function generationButton() {
@@ -275,8 +132,8 @@ function displayResult(selection) {
 
 
     console.log("Final selection:", topicText);
-    // You can create a DOM element to display this
 
+    // display result section
     const topicResultSection = document.createElement("section");
     topicResultSection.className = "topic-result-section";
     
@@ -284,7 +141,7 @@ function displayResult(selection) {
     topicElement.innerHTML = topicText;
     topicElement.classList.add("topic-result-text");
     
-    // Append to a container or body
+    // removes existing result if it exists.
     if (document.querySelector(".topic-result-section")) {
         document.querySelector(".topic-result-section").remove();
     }
@@ -304,9 +161,6 @@ function getCurrentSelectionValues() {
     
     if (subject &&media && categories.subject[media.toLowerCase()]) {
         const subjectCategory = categories.subject[media.toLowerCase()];
-        const subKeys = Object.keys(subjectCategory);
-        // const randomSubKey = subKeys[Math.floor(Math.random() * subKeys.length)];
-        // const subjectOptions = subjectCategory[randomSubKey];
         const subjectOptions = subjectCategory[subject];
         randomSubjectItem = subjectOptions[Math.floor(Math.random() * subjectOptions.length)];
     }
@@ -337,9 +191,9 @@ function formatTopicText(selection) {
     const mediumArticle  = getArticle(medium);
 
     if (styleCategory === "artist") {
-    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of <br>${subjectArticle}<span class="subjectText">${cleanSubject}</span> <br>in the style of <br><span class="styleText">${cleanStyle}</span>.`;
+    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of <br>${subjectArticle}<span class="subjectText">${cleanSubject}</span> <br>in the style of <br><span class="styleText">${cleanStyle}</span>`;
     } else {
-    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of <br>${subjectArticle}<span class="subjectText">${cleanSubject}</span> in a <br><span class="styleText">${cleanStyle}</span> style.`;
+    return `Make ${mediumArticle} <span class="mediumText">${medium}</span> of <br>${subjectArticle}<span class="subjectText">${cleanSubject}</span> in a <br><span class="styleText">${cleanStyle}</span> style`;
     }
 }
 
