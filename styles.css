@@ -30,7 +30,7 @@ body {
     background-color: #555;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    min-height: 50vh;
+    min-height: 20vh;
 }
 
 .choice-container {
@@ -159,3 +159,46 @@ p {
 }
 
 
+@media screen and (max-width: 768px) {
+
+    #title {
+        font-size: 1.3rem;
+    }
+
+    #explanation {
+        font-size: 0.9rem;
+    }
+    
+    .choice-container {
+        max-width: 90vw;
+        max-height: fit-content;
+        overflow-y: auto;
+    }
+    
+    .topic-result-section {
+        max-height: fit-content;
+        overflow-y: auto;
+        max-width: 90vw;
+    }
+    
+    .choice-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    
+    .choice-section label {
+        margin-left: 0;
+        margin-bottom: 0.4rem;
+        text-align: left;
+    }
+    
+    .choice-section select {
+        width: 80%;
+    }
+    
+    .generate-button {
+        max-width: 40%;
+        min-width: 20%;
+    }
+}
