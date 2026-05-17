@@ -11,6 +11,11 @@ export function createElements() {
     titleText.id = "title";
     titleText.textContent = "Random Art Topic Generator";
     topicContainer.appendChild(titleText);
+
+    const explanationText = document.createElement("p");
+    explanationText.id = "explanation";
+    explanationText.textContent = "This tool generates random art topics for you to get inspired by, Hope you enjoy.";
+    titleText.insertAdjacentElement("beforeend", explanationText);
     
     const generateButton = generationButton();
     topicContainer.appendChild(generateButton);
@@ -35,7 +40,7 @@ export function createElements() {
     const subjectElement = document.getElementById("subject");
 
     mediaElement.addEventListener("change", () => {
-        const selectedMedia = mediaElement.value.toLowerCase().replace(/\s+/g, '-');
+        const selectedMedia = mediaElement.value.toLowerCase()
         const options = Object.keys(categories.subject[selectedMedia])
 
         subjectElement.innerHTML = "";
@@ -157,7 +162,8 @@ function createSubject(genre) {
     subject.className = "subject";
     subject.dataset.action = "subject";
     
-    const genreData = categories.subject[genre.toLowerCase().replace(/_/g, '')];
+    const genreData = categories.subject[genre.toLowerCase().replace(/[\s_]+/g, '_')];
+    console.log(genreData);
     
     // Add options
     const options = Object.keys(genreData);

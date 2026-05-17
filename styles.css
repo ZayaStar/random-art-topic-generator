@@ -13,7 +13,8 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black, 0 0 5px black;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
@@ -26,6 +27,7 @@ body {
     padding: 2rem;
     max-width: 50vw;
     border-radius: 0.5rem;
+    background-color: #555;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     min-height: 50vh;
@@ -57,7 +59,10 @@ body {
     padding: 0.25rem;
     text-align: right;
     color: #000;
-    background-color: #e9c5ade0;
+    border-color: #fff;
+    background-color: #333;
+    color: #fff;
+    /* background-color: #e9c5ade0; */
     border-radius: 0.25rem;
 }
 
@@ -67,8 +72,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #e9c5ade0;
-    color: #000;
+    border-color: #fff;
+    color: #fff;
+    background-color: #333;
+    /* background-color: #e9c5ade0; */
+    /* color: #000; */
     border-radius: 0.25rem;
 }
 
@@ -87,6 +95,16 @@ body {
     margin: 1rem;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 0.25rem;
+    border-color: #fff;
+    border-style: outset;
+    background-color: #333;
+    color: #fff;
+}
+
+.generate-button:active {
+    border-style: inset;
+    background-color: #444;
 }
 
 .topic-result-section {
@@ -96,7 +114,6 @@ body {
     border: 1px solid #fff;
     border-radius: 0.5rem;
     background-color: #333;
-    /* color: #fff; */
     text-align: center;
     align-self: center;
     max-width: 35vw;
