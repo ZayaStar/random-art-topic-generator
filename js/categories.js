@@ -1,0 +1,364 @@
+
+/**
+ * Categories for art topic generation
+ * @type {Object}
+ * @property {string[]} medium - List of art mediums
+ * @property {string[]} mediaGenre - List of media genres
+ * @property {Object} subject - Subject categories
+ * @property {Object} style - Style categories
+ * 
+ * SYMBOLS:
+ * @ - No article needed.
+ * # - Article "The" is needed.
+ * if there is no symbol at all the default article is "A" or "An" depending on the word.
+ */
+
+export const categories = {
+    medium: [
+        "Sketch", 
+        "Doodle", 
+        "Illustration", 
+        "Painting"
+    ],
+    mediaGenre: [
+        "Games", 
+        "Anime", 
+        "Movies", 
+        "Comics", 
+        "Real_Life"
+    ],
+    subject: {
+        games: {
+            characters: [
+                "@Link (The Legend of Zelda)", 
+                "@Mario (Super Mario)", 
+                "@Sonic (Sonic the Hedgehog)",
+                "@Pikachu (Pokemon)",
+                "@Gustave (Clair Obscur)",
+                "@Maelle (Clair Obscur)",
+                "#Paintress (Clair Obscur)",
+                "@Renoir (Clair Obscur)",
+                "@Verso (Clair Obscur)",
+                "@Amy Rose (Sonic the Hedgehog)",
+                "@Tails 'Miles' Prower (Sonic the Hedgehog)",
+                "@Knuckles (Sonic the Hedgehog)",
+                "@Shadow (Sonic the Hedgehog)",
+                "@Dr. Eggman (Sonic the Hedgehog)",
+                "@Luigi (Super Mario)",
+                "@Princess Peach (Super Mario)",
+                "@Bowser (Super Mario)",
+                "@Yoshi (Super Mario)",
+                "@Zelda (The Legend of Zelda)",
+                "@Sheik (The Legend of Zelda)",
+                "@Pit (Kid Icarus)",
+                "@Palutena (Kid Icarus)",
+                "@Navi (The Legend of Zelda)",
+                "@Ganondorf (The Legend of Zelda)",
+                "@Midna (The Legend of Zelda)",
+                "@Charmander (Pokemon)",
+                "@Squirtle (Pokemon)",
+                "@Bulbasaur (Pokemon)",
+                "@Sneasel (Pokemon)",
+                "@Gengar (Pokemon)",
+                "@Greninja (Pokemon)",
+                "@Gyarados (Pokemon)",
+                "@Kangaskhan (Pokemon)",
+                "@Kadabra (Pokemon)",
+                "@Jigglypuff (Pokemon)",
+                "@Eevee (Pokemon)",
+                "@Any Pokemon",
+                "@Any Eeveelution",
+                "@Any Starter Pokemon",
+                "@Agumon (Digimon)",
+                "@Gabumon (Digimon)",
+                "@Guilmon (Digimon)",
+                "@Gatomon / Tailmon (Digimon)",
+                "@Angemon (Digimon)",
+                "@Angewomon (Digimon)",
+                "@Gallantmon (Digimon)",
+                "@Any Digimon",
+                "@Zagreus (Hades)",
+                "@Hades (Hades)",
+                "@Persephone (Hades)",
+                "@Megaera (Hades)",
+                "@Alecto (Hades)",
+                "@Tisiphone (Hades)",
+                "@Aegiomon (Digimon)",
+                "@Dante (Devil May Cry)",
+                "@Dante (Limbus Company)",
+                "@Kratos (God of War, any period)",
+                "@Atreus (God of War, any period)",
+                "@Tevi (TEVI)",
+                "@Vena (TEVI)",
+                "@Lifmunk (Palworld)",
+                "@Depresso (Palworld)",
+                "@Tocotoco (Palworld)",
+                "@Chillet (Palworld)",
+                "@Any Pal (Palworld)",
+                "@Celeste (Celeste)",
+                "@Lea (Crosscode)",
+                "@Astarion (Baldur's Gate 3)",
+                "@Shadowheart (Baldur's Gate 3)",
+                "@Lae'zel (Baldur's Gate 3)",
+                "@Gale (Baldur's Gate 3)",
+                "@Jaheira (Baldur's Gate 3)",
+                "@Raphael (Baldur's Gate 3)",
+                "@Wyll (Baldur's Gate 3)",
+                "@Karlach (Baldur's Gate 3)",
+                "@Halsin (Baldur's Gate 3)",
+                "@Minsc (Baldur's Gate 3)",
+                "@Minthara (Baldur's Gate 3)",
+                "#Dark Urge (Baldur's Gate 3)",
+                "@Yennefer of Vengerberg (The Witcher)",
+                "@Triss Merigold (The Witcher)",
+                "@Ciri (The Witcher)",
+                "@Geralt of Rivia (The Witcher)",
+                "@Steve (Minecraft)"
+            ],
+            fictional_location: [
+                "@Hyrule (The Legend of Zelda)", 
+                "@The Mushroom Kingdom (Super Mario)", 
+                "@The Green Hill Zone (Sonic the Hedgehog)",
+                "@The Indigo Plateau (Pokemon)",
+                "@Lorule (The Legend of Zelda)",
+                "@Whirlpool Islands (Pokemon)",
+                "@Asphodelos (Hades)",
+                "@Elysium (Hades)",
+                "@Pelican Town (Stardew Valley)",
+                "@Your farm (Stardew Valley)",
+                "@Marnie's Ranch (Stardew Valley)",
+                "#Hot Springs (Stardew Valley)",
+                "@Joja Mart (Stardew Valley)",
+                "@2Fort (Team Fortress 2)",
+                "@Deimos (Warframe)",
+                "@Malevelon Creek (Helldivers 2)",
+                "@Super Earth (Helldivers 2)",
+                "@Graia (Warhammer 40K: Space Marines)",
+                "@Avarax (Warhammer 40K: Space Marines 2)",
+                "@Demerium (Warhammer 40K: Space Marines 2)",
+                "@Baldur's Gate (Baldur's Gate 3)",
+                "#Nautiloid (Baldur's Gate 3)",
+                "#Emerald Grove (Baldur's Gate 3)",
+                "#Goblin Camp (Baldur's Gate 3)",
+                "#Grymforge (Baldur's Gate 3)",
+
+            ],
+            abilities: [
+                "@Hadouken (Street Fighter)",
+                "@Shoryuken (Street Fighter)",
+                "@Totsugeki! (Guilty Gear)",
+                "@Any magic spell (various games)",
+                "@Hyper Beam (Pokemon)",
+                "@Scorpion's grab / Get Over Here! (Mortal Kombat)",
+                "@Spin Dash (Sonic the Hedgehog)",
+                "@Chaos Control (Sonic the Hedgehog)",
+                "@Any Final Smash (Super Smash Bros)",
+                "@Raging Demon (Street Fighter)"
+            ],
+            special_items: [
+                "Fire Flower (Super Mario)", 
+                "#Master Sword (The Legend of Zelda)", 
+                "Rupee (The Legend of Zelda)", 
+                "Mushroom (Super Mario)", 
+                "@one of Sonic the Hedgehog's Power-ups",
+                "#Astral Prism (Baldur's Gate 3)",
+                "#Buster Sword (Final Fantasy VII)",
+                "#Blades of Chaos (God of War)",
+                "#Portal Gun (Portal)",
+                "#Blue Shell (Mario Kart)",
+                "#Moonlight Greatsword (Dark Souls)",
+                "#Vampire Killer (Castlevania)",
+                "@Ebony and Ivory (Devil May Cry)",
+                "#Lancer (Gears of War)",
+                "@Frostmourne (World of Warcraft)",
+                "#Keyblade (Kingdom Hearts)",
+                "Diamond Sword (Minecraft)"
+            ],
+        },
+        anime: {
+            characters: [
+                "@Goku (Dragon Ball)", 
+                "@Vegeta (Dragon Ball)",
+                "@Naruto (Naruto)", 
+                "@Saitama (One Punch Man)",
+                "@Eren Yeager (Attack on Titan)",
+                "@Guts (Berserk)",
+                "@Light Yagami (Death Note)",
+                "@Lelouch Lamperouge (Code Geass)",
+                "@Itachi Uchiha (Naruto)",
+                "@Sasuke Uchiha (Naruto)",
+                "@Sakura Haruno (Naruto)",
+                "@Kurapika (Hunter x Hunter)",
+                "@Hisoka Morow (Hunter x Hunter)",
+                "@Gon Freecss (Hunter x Hunter)",
+                "@Killua Zoldyck (Hunter x Hunter)",
+                "@Inuyasha (Inuyasha)",
+                "@Kagome Higurashi (Inuyasha)",
+                "@Miroku (Inuyasha)",
+                "@Shippou (Inuyasha)",
+                "@Kikyo (Inuyasha)",
+                "@Sango (Inuyasha)",
+                "@Sesshomaru (Inuyasha)",
+                "@Griffith (Berserk)",
+                "@Jotaro Kujo (JoJo's Bizarre Adventure)",
+                "@Josuke Higashikata (JoJo's Bizarre Adventure)",
+                "@Dio Brando (JoJo's Bizarre Adventure)",
+                "@Jonathan Joestar (JoJo's Bizarre Adventure)",
+                "@Joseph Joestar (JoJo's Bizarre Adventure)",
+                "@Jolyne Cujoh (JoJo's Bizarre Adventure)",
+                "@Speedwagon (JoJo's Bizarre Adventure)",
+                "@Judeau (Berserk)",
+                "@Ainz Ooal Gown (Overlord)",
+                "@Albedo (Overlord)",
+                "@Cocytus (Overlord)",
+                "@Shalltear Bloodfallen (Overlord)",
+                "@Saber (Fate/Stay Night)"
+            ],
+            fictional_location: [ 
+                "@Konoha (Naruto)", 
+                "@Z-City (One-Punch Man)",
+                "@West City (Dragon Ball)",
+                "@Kami's Lookout (Dragon Ball)",
+                "@Beerus' Planet (Dragon Ball)",
+                "@Planet Namek (Dragon Ball)",
+                "@Tournament of Power (Dragon Ball)",
+                "@Capsule Corp (Dragon Ball)",
+                "@The hidden Sand Village (Naruto)",
+                "@Greed Island (Hunter x Hunter)",
+                "@Chimera Ants' Palace (Hunter x Hunter)",
+                "@The Phantom Troupe's Hideout (Hunter x Hunter)",
+                "@The bone eater's Well (Inuyasha)",
+                "@Higurashi Shrine (Inuyasha)",
+                "@Kaede's Village (Inuyasha)",
+                "@Little Garden (One Piece)",
+                "@Skypiea (One Piece)",
+                "@Water 7 (One Piece)",
+                "@Impel Down (One Piece)",
+                "@Whole Cake Island (One Piece)",
+                "@Sabaody Archipelago (One Piece)",
+                "@Fantasia (Berserk)",
+                "@The Abyss (Berserk)",
+                "@Kushan (Berserk)",
+                "@Shiganshina (Attack on Titan)",
+                "@Capital Mitras (Attack on Titan)",
+                "@Underground (Attack on Titan)",
+                "@Fort Salta (Attack on Titan)"
+            ],
+            abilities: [
+                "@Someone using a Kamehameha (Dragon Ball)", 
+                "@Someone using the Shadow Clone Jutsu (Naruto)", 
+                "@Someone using Destructo Discs (Dragon Ball)",
+                "@Someone using Special Beam Cannon (Dragon Ball)",
+                "@Someone using eye powers, magical, supernatural anything (various)",
+                "@Someone using a Hinokami Kagura / Fire breathing (Demon Slayer)",
+                "@Someone using Unlimited Void (Jujutsu Kaisen)",
+                "@Someone using Domain Expansion (Jujutsu Kaisen)",
+                "@Someone using Unlimited Blade Works (Fate/Stay Night)"
+            ],
+            special_items: [
+                "@Omnidirectional Mobility Gear (ODM) from Attack on Titan, optionally with Swords (Attack on Titan)",
+                "@Someone using Guts' sword (Berserk)",
+                "#Staff of Ainz Ooal Gown (Overlord)",
+                "@Inuyasha's Sword, Tessaiga (Inuyasha)",
+                "@Sesshomaru's sword, Tenseiga (Inuyasha)",
+                "@Miroku's staff (Inuyasha)",
+                "@Sango's Boomerang (Inuyasha)",
+                "@Someone using a kunai (Naruto)",
+                "#Dragon Balls (Dragon Ball)",
+                "#Death Note (Death Note)",
+                "@Someone powering up, via transformation (various)",
+                "@Saitama's Gloves (One Punch Man)", 
+            ],
+        },
+        movies: {
+            characters: [
+                "@Luke Skywalker (Star Wars)", 
+                "@Harry Potter (Harry Potter)", 
+                "@Iron Man (Iron Man)"
+            ],
+            fictional_location: [
+                "@Tatooine (Star Wars)", 
+                "@Hogwarts (Harry Potter)", 
+                "@Stark Tower (Iron Man)"
+            ],
+            abilities: [
+                "Lightsaber (Star Wars)", 
+                "Any magic spell (Harry Potter)", 
+                "#Repulsor Suit (Iron Man)"
+            ],
+            special_items: [
+                "#Death Star Plans (Star Wars)", 
+                "#Elder Wand (Harry Potter)", 
+                "#Arc Reactor (Iron Man)"
+            ],
+        },
+        comics: {
+            characters: [
+                "@Spider-Man from The Amazing Spider-Man", 
+                "@Batman from Batman & Robin", 
+                "@Superman from The man of steel"
+            ],
+            fictional_location: [
+                "Somewhere in Staten Island from the Spider-Man comics", 
+                "Someplace in Gotham City", 
+                "Somewhere in, or around Metropolis"
+            ],
+            abilities: [
+                "Web Shooter", 
+                "Batarang", 
+                "@Heat Vision"
+            ],
+            special_items: [
+                "@Someone with Spider Sense", 
+                "@Batman's Utility Belt", 
+                "@Someone with Super Strength"
+            ],
+        },
+        real_life:{
+            real_location: [
+                "Something in, or from Paris", 
+                "Something in, or from New York", 
+                "Something in, or from Tokyo"
+            ],
+            landmark: [
+                "#Eiffel Tower", 
+                "#Statue of Liberty", 
+                "#Tokyo Tower"
+            ],
+            },
+
+    },
+    style: {
+        your_style: [
+            "Your style"
+        ],
+        artist: [
+            "@Pablo Picasso", 
+            "@Vincent van Gogh", 
+            "@Bob Ross", 
+            "@Andonoz"
+        ],
+        genre: [
+            "Futuristic", 
+            "Cyberpunk", 
+            "Steampunk", 
+            "Sci-fi", 
+            "Fantasy", 
+            "Anime", 
+            "Manga", 
+            "Urban", 
+            "Gothic", 
+            "Realistic", 
+            "Western cartoon style from 40s-2000s", 
+            "Pop Art", 
+            "Wild-west", 
+            "Watercolour", 
+            "Fighting scene", 
+            "Portrait", 
+            "Action scene",
+            "Photorealistic", 
+            "Renaissance painting"
+        ],
+    }
+}
+

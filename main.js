@@ -1,5 +1,5 @@
-import { categories } from './Random Art Topic Generator/JSmodules/categories.js';
-import { createElements } from './Random Art Topic Generator/JSmodules/createElements.js';
+import { categories } from './js/categories.js';
+import { createElements } from './js/createElements.js';
 
 console.log(categories);
 createElements();
