@@ -16,6 +16,15 @@ export function createElements() {
     explanationText.id = "explanation";
     explanationText.textContent = "This tool generates random art topics for you to get inspired by, Hope you enjoy.";
     titleText.insertAdjacentElement("beforeend", explanationText);
+
+    const currentlyWipText = document.createElement("p");
+    currentlyWipText.id = "currently-wip";
+    currentlyWipText.className = "currently-wip";
+    currentlyWipText.style.fontSize = "0.75rem";
+    currentlyWipText.style.marginTop = "0.5rem";
+    currentlyWipText.style.position = "relative";
+    currentlyWipText.textContent = "Currently in progress: Comic, Movies and Real-life categories";
+    titleText.insertAdjacentElement("beforeend", currentlyWipText);
     
     const generateButton = generationButton();
     topicContainer.appendChild(generateButton);
