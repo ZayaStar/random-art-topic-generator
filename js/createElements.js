@@ -250,7 +250,7 @@ function getGalleryImagePath(styleName, styleCategory) {
         const folder = styleCategory === "artist" ? "artists" : "genres";
         console.log("Image file:", imageFile);
         console.log("Folder:", folder);
-        return `/storage/${folder}/${cleanStyleName}/${imageFile}`;
+        return `./storage/${folder}/${cleanStyleName}/${imageFile}`;
     }
     
     console.log("No image file found for:", cleanStyleName);
