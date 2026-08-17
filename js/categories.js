@@ -9,7 +9,7 @@
  * 
  * SYMBOLS:
  * @ - No article needed.
- * # - Article "The" is needed.
+ * # - Article "The" is needed. Very optional.
  * if there is no symbol at all the default article is "A" or "An" depending on the word.
  */
 
@@ -108,7 +108,7 @@ export const categories = {
                 "@Halsin (Baldur's Gate 3)",
                 "@Minsc (Baldur's Gate 3)",
                 "@Minthara (Baldur's Gate 3)",
-                "#Dark Urge (Baldur's Gate 3)",
+                "@The Dark Urge (Baldur's Gate 3)",
                 "@Yennefer of Vengerberg (The Witcher)",
                 "@Triss Merigold (The Witcher)",
                 "@Ciri (The Witcher)",
@@ -127,7 +127,7 @@ export const categories = {
                 "@Pelican Town (Stardew Valley)",
                 "@Your farm (Stardew Valley)",
                 "@Marnie's Ranch (Stardew Valley)",
-                "#Hot Springs (Stardew Valley)",
+                "@The Hot Springs (Stardew Valley)",
                 "@Joja Mart (Stardew Valley)",
                 "@2Fort (Team Fortress 2)",
                 "@Deimos (Warframe)",
@@ -137,10 +137,10 @@ export const categories = {
                 "@Avarax (Warhammer 40K: Space Marines 2)",
                 "@Demerium (Warhammer 40K: Space Marines 2)",
                 "@Baldur's Gate (Baldur's Gate 3)",
-                "#Nautiloid (Baldur's Gate 3)",
-                "#Emerald Grove (Baldur's Gate 3)",
-                "#Goblin Camp (Baldur's Gate 3)",
-                "#Grymforge (Baldur's Gate 3)",
+                "@The Nautiloid (Baldur's Gate 3)",
+                "@The Emerald Grove (Baldur's Gate 3)",
+                "@The Goblin Camp (Baldur's Gate 3)",
+                "@The Grymforge (Baldur's Gate 3)",
 
             ],
             abilities: [
@@ -381,10 +381,28 @@ export const categories = {
             "Your style"
         ],
         artist: [
+            "@Bob Ross", 
             "@Pablo Picasso", 
             "@Vincent van Gogh", 
-            "@Bob Ross", 
-            "@Andonoz"
+            "@Hayao Miyazaki",
+            "@Andonoz",
+            "@CrimsonMary",
+            "@Sakimichan",
+            "@Iomaya",
+            "@Makoto Shinkai",
+            "@Studio Ghibli",
+            "@Studio Trigger (Gainax)",
+            "@Kyoto Animation",
+            "@Toei Animation",
+            "@Arcane",
+            "@Hannah Barbera",
+            "@Walt Disney (2D animation)",
+            "@Pixar (3D animation)",
+            "@DreamWorks (3D animation)",
+            "@Satoshi Kon",
+            "@Makoto Shinkai",
+            "@Studio Bones",
+            
         ],
         genre: [
             "Futuristic", 
@@ -397,7 +415,7 @@ export const categories = {
             "Urban", 
             "Gothic", 
             "Realistic", 
-            "Western cartoon style from 40s-2000s", 
+            "Western cartoon between 40s-2000s", 
             "Pop Art", 
             "Wild-west", 
             "Watercolour", 
