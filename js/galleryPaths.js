@@ -1,9 +1,9 @@
 export const galleryImagePairs = {
     artists: {
     "Bob Ross": [
-        "Bob ross - 1.webp", 
-        "Bob ross - 2.webp",
-        "Bob ross - 3.webp"
+        "Bob Ross - 1.webp", 
+        "Bob Ross - 2.webp",
+        "Bob Ross - 3.webp"
     ],
     "Pablo Picasso": [
         "Picasso - 1.webp", 
