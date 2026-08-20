@@ -1,5 +1,4 @@
 import { categories } from "./categories.js";
-import { galleryImagePairs } from "./galleryPaths.js";
 
 // main function to create UI and changes.
 export function createElements() {
@@ -32,7 +31,7 @@ export function createElements() {
     disclaimer.id = "disclaimer";
     disclaimer.style.fontStyle = "italic";
     disclaimer.style.fontSize = "0.6rem";
-    disclaimer.textContent = `Disclaimer: Subjects opens a google search in new tab and style opens a tiny image in a small popup`;
+    disclaimer.textContent = `Disclaimer: Subjects opens a google search in new tab and style opens a google search for the style in question.`;
     titleText.insertAdjacentElement("beforeend", disclaimer);
     
     const generateButton = generationButton();
@@ -229,7 +228,7 @@ function formatArtistExample(artist) {
     return artistArray;
 }
 
-function getGalleryImagePath(styleName, styleCategory) {
+/*function getGalleryImagePath(styleName, styleCategory) {
 
     const cleanStyleName = styleName.replace(/^@/g, '').trim();
     let imageFile = null;
@@ -256,15 +255,13 @@ function getGalleryImagePath(styleName, styleCategory) {
     console.log("No image file found for:", cleanStyleName);
     return null;
 }
+*/
 
 function displayResult(selection) {
 
     console.log("Selection:", selection);
     
     const topicText = formatTopicText(selection);
-
-    const styleImagePath = getGalleryImagePath(selection.style, selection.styleCategory);
-    console.log("Style image path:", styleImagePath);
     console.log("Final selection:", topicText);
 
     // display result section
@@ -275,37 +272,18 @@ function displayResult(selection) {
     topicElement.innerHTML = topicText;
     topicElement.classList.add("topic-result-text");
 
+    // google search for artworks fitting that style
     const styleTextElement = topicElement.querySelector(".styleText"); 
-    if (styleTextElement && styleImagePath) {
-        styleTextElement.style.cursor = 'pointer'
-        
-        const styleDialog = document.createElement('dialog');
-        styleDialog.classList.add('style-dialog');
-        
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = 'Close';
-        closeBtn.classList.add('close-btn');
-        closeBtn.addEventListener('click', () => {
-            styleDialog.close();
-        });
-
-        const styleImage = document.createElement('img');
-        styleImage.src = styleImagePath;
-        styleImage.alt = "Style image";
-        styleImage.classList.add('style-image');
-        
-        styleDialog.insertAdjacentElement('afterbegin', styleImage);
-        styleDialog.insertAdjacentElement('beforeend', closeBtn);
-        document.body.appendChild(styleDialog);
-        
+    if (styleTextElement && !styleTextElement.textContent.toLowerCase().includes("your style")) {
+        styleTextElement.style.cursor = 'pointer';
         styleTextElement.addEventListener('click', () => {
-            console.log("Style text clicked");
-            styleDialog.showModal();
+            console.log("clicked style text.");
+            const styleQuery = styleTextElement.textContent.trim();
+            window.open(`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(styleQuery)}+artworks+-ai`, '_blank');
         });
-
-
     }
 
+    // google search for subject
     const subjectTextElement = topicElement.querySelector(".subjectText"); 
     if (subjectTextElement) {
         subjectTextElement.style.cursor = 'pointer'
